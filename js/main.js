@@ -5,6 +5,7 @@ let loading = document.querySelector("#loading");
 
 const loadingToItems = (items) => {
   loading.textContent = `${items} items.`;
+  loading.style.backgroundColor = "rgb(194, 243, 194)";
 }
 
 const fetchAPI = (pageCategory) => {
@@ -31,8 +32,9 @@ const showData = (jsonObj, pageCategory) => {
         <p>${description}</p>
         <h5>Price: $${price}</h5>
       </div>
-    
-      <img src="${image}">
+      <div id="listItem--img">
+        <img src="${image}">
+      </div>
       `;
 
       targetContainer.appendChild(listItem);
