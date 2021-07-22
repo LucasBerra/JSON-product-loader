@@ -2,7 +2,6 @@
 let loading = document.querySelector("#loading");
 
 
-
 const loadingToItems = (items) => {
   loading.textContent = `${items} items.`;
   loading.style.backgroundColor = "rgb(194, 243, 194)";
@@ -43,13 +42,9 @@ const showData = (jsonObj, pageCategory) => {
   });
 
   loadingToItems(totalItems);
-  console.log(`There are ${totalItems} items in the list`);
 }
 
 let targetContainer = document.querySelector("#targetContainer");
 
 let pageCategory = document.querySelector("#page-value").textContent;
 window.addEventListener("load", fetchAPI(pageCategory.toLowerCase()));
-
-let fetchBtn = document.querySelector("#fetchBtn");
-fetchBtn.addEventListener("click", fetchAPI("jewelery"))
