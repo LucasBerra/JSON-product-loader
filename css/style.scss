@@ -1,0 +1,136 @@
+@font-face {
+  font-family: "Boarding";
+  src: url("font/Boarding\ PersonalUse.ttf");
+}
+
+body {
+  background: linear-gradient(135deg,rgb(224, 224, 224), rgb(240, 240, 240) 80%) fixed;
+}
+
+header {
+  background-color: bisque;
+  border-bottom: 2px dotted burlywood;
+
+  h1 {
+    font-family: "Boarding";
+    font-weight: 900;
+    font-size: 50px;
+  }
+
+  p {
+    font-size: 18px;
+  }
+
+  a {
+    padding: 24px;
+    text-decoration: none;
+    color: #212529;
+    display: block;
+    height: 100%;
+    width: 100%;
+    &:hover {
+      color: #212529;
+    }
+  }
+}
+
+main {
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+#index-main {
+  background-color: rgb(252, 252, 252);
+  border-radius: 5px;
+  padding: 16px;
+  margin: 20px 20px;
+  box-shadow: grey 0 0 2px;
+  background: bisque;
+  width: 900px;
+  max-width: 96vw;
+
+  h3 {
+    margin-bottom: 20px; 
+  }
+
+  a {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    width: 46%;
+    height: 120px;
+    background: rgba($color: #ffffff, $alpha: 0.6);
+    margin: 10px;
+    color: #212529;
+    box-shadow: grey 0 0 2px;
+    &:hover {
+      color: #212529;
+      animation: "index-links" 100ms ease forwards;
+    }
+  }
+}
+
+#title {
+  background-color: rgb(252, 252, 252);
+  border-radius: 5px;
+  padding: 16px;
+  margin: 20px 0;
+  box-shadow: grey 0 0 2px;
+  h2 {
+    display: inline;
+  }
+  button {
+    margin-right: 16px;
+  }
+}
+
+.loading-style {
+  border-radius: 5px;
+  background-color: rgb(194, 243, 194);
+  padding: 5px;
+  font-size: 1.2rem;
+  margin: 0 20px;
+}
+
+#targetContainer {
+  height: fit-content;
+  min-height: 270px;
+  width: 730px;
+  padding: 0px 24px;
+  background-color: white;
+  border: 2px solid gainsboro;
+  border-radius: 5px;
+  margin-bottom: 64px;
+}
+
+.listItem {
+  display: flex;
+  height: fit-content;
+  gap: 20px;
+  padding: 20px 0;
+  min-height: 240px;
+  border-bottom: 2px solid gainsboro;
+  &:last-child {
+    border: none;
+  }
+}
+
+#listItem--img {
+  display: block;
+  height: 240px;
+  min-width: 260px;
+}
+
+img {
+  max-width: 240px;
+  max-height: 240px;
+  display: block;
+  margin: 0 auto;
+}
+
+@keyframes index-links {
+  to { transform: scale(1.05); }
+}
