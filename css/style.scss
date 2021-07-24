@@ -19,6 +19,7 @@ header {
 
   p {
     font-size: 18px;
+    margin: 0;
   }
 
   a {
@@ -73,11 +74,16 @@ main {
   }
 }
 
+@keyframes index-links {
+  to { transform: scale(1.05); }
+}
+
 #title {
   background-color: rgb(252, 252, 252);
-  border-radius: 5px;
+  border-radius: 20px 0;
+  width: fit-content;
   padding: 16px;
-  margin: 20px 0;
+  margin: 20px auto;
   box-shadow: grey 0 0 2px;
   h2 {
     display: inline;
@@ -90,6 +96,15 @@ main {
   }
 }
 
+#list-btn {
+  border-radius: 16px 0;
+  margin: 20px 0;
+}
+
+.hidden {
+  display: none;
+}
+
 .loading-style {
   border-radius: 5px;
   background-color: rgb(255, 248, 144);
@@ -98,42 +113,149 @@ main {
   margin: 0 20px;
 }
 
+#content {
+  display: block;
+  margin: 0 auto;
+}
+
 #targetContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   height: fit-content;
-  min-height: 270px;
-  width: 730px;
-  padding: 0px 24px;
+  width: auto;
+  max-width: 1084px;
+  padding: 0px;
   background-color: white;
   border: 2px solid gainsboro;
   border-radius: 5px;
-  margin-bottom: 64px;
+  margin: 0 auto 64px;
 }
 
 .listItem {
   display: flex;
   height: fit-content;
-  gap: 20px;
-  padding: 20px 0;
-  min-height: 240px;
-  border-bottom: 2px solid gainsboro;
-  &:last-child {
-    border: none;
+  width: 540px;
+  padding: 16px;
+  height: 220px;
+  border: 1px solid gainsboro;
+  text-decoration: none;
+  color: #212529;
+  cursor: pointer;
+  &:hover {
+    color: #212529;
+    h4 {
+      color: #205f9e;
+    }
+  }
+
+  h4 {
+    font-size: larger;
+  }
+
+  p {
+    overflow: hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   -webkit-line-clamp: 3;
+   -webkit-box-orient: vertical;
+  }
+
+  img {
+    max-width: 120px;
+    max-height: 120px;
+    display: block;
+    margin: 0 auto;
   }
 }
 
 #listItem--img {
   display: block;
-  max-height: 240px;
-  min-width: 260px;
+  max-height: 120px;
+  min-width: 130px;
 }
 
-img {
-  max-width: 240px;
-  max-height: 240px;
+@media (max-width: 1199.98px) {
+  #targetContainer {
+    flex-direction: column;
+    width: fit-content;
+  }
+}
+
+@media (max-width: 1199.98px) and (min-width: 992px) {
+  .listItem {
+    height: 200px;
+    width: 700px;
+
+    img {
+      max-width: 140px;
+      max-height: 140px;
+    }
+  }
+
+  #listItem--img {
+    max-height: 140px;
+    min-width: 150px;
+  }
+}
+
+.itemBody {
   display: block;
-  margin: 0 auto;
+  width: 740px;
+  padding: 20px;
+
+  img {
+    display: block;
+    max-height: 300px;
+    max-width: 300px;
+    margin: 0 auto 20px;
+  }
+
+  p {
+    padding-left: 20px;
+    text-indent: 6px;
+  }
 }
 
-@keyframes index-links {
-  to { transform: scale(1.05); }
+
+
+/********
+  LOADER
+*********/
+
+.lds-facebook {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-facebook div {
+  display: inline-block;
+  position: absolute;
+  left: 8px;
+  width: 16px;
+  background: lightgray;
+  animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+}
+.lds-facebook div:nth-child(1) {
+  left: 8px;
+  animation-delay: -0.24s;
+}
+.lds-facebook div:nth-child(2) {
+  left: 32px;
+  animation-delay: -0.12s;
+}
+.lds-facebook div:nth-child(3) {
+  left: 56px;
+  animation-delay: 0;
+}
+@keyframes lds-facebook {
+  0% {
+    top: 8px;
+    height: 64px;
+  }
+  50%, 100% {
+    top: 24px;
+    height: 32px;
+  }
 }

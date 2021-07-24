@@ -20,6 +20,7 @@ header h1 {
 
 header p {
   font-size: 18px;
+  margin: 0;
 }
 
 header a {
@@ -86,11 +87,28 @@ main {
           animation: "index-links" 100ms ease forwards;
 }
 
+@-webkit-keyframes index-links {
+  to {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+  }
+}
+
+@keyframes index-links {
+  to {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+  }
+}
+
 #title {
   background-color: #fcfcfc;
-  border-radius: 5px;
+  border-radius: 20px 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   padding: 16px;
-  margin: 20px 0;
+  margin: 20px auto;
   -webkit-box-shadow: grey 0 0 2px;
           box-shadow: grey 0 0 2px;
 }
@@ -107,6 +125,15 @@ main {
   margin-right: 16px;
 }
 
+#list-btn {
+  border-radius: 16px 0;
+  margin: 20px 0;
+}
+
+.hidden {
+  display: none;
+}
+
 .loading-style {
   border-radius: 5px;
   background-color: #fff890;
@@ -115,17 +142,30 @@ main {
   margin: 0 20px;
 }
 
+#content {
+  display: block;
+  margin: 0 auto;
+}
+
 #targetContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  min-height: 270px;
-  width: 730px;
-  padding: 0px 24px;
+  width: auto;
+  max-width: 1084px;
+  padding: 0px;
   background-color: white;
   border: 2px solid gainsboro;
   border-radius: 5px;
-  margin-bottom: 64px;
+  margin: 0 auto 64px;
 }
 
 .listItem {
@@ -135,40 +175,150 @@ main {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  gap: 20px;
-  padding: 20px 0;
-  min-height: 240px;
-  border-bottom: 2px solid gainsboro;
+  width: 540px;
+  padding: 16px;
+  height: 220px;
+  border: 1px solid gainsboro;
+  text-decoration: none;
+  color: #212529;
+  cursor: pointer;
 }
 
-.listItem:last-child {
-  border: none;
+.listItem:hover {
+  color: #212529;
 }
 
-#listItem--img {
-  display: block;
-  max-height: 240px;
-  min-width: 260px;
+.listItem:hover h4 {
+  color: #205f9e;
 }
 
-img {
-  max-width: 240px;
-  max-height: 240px;
+.listItem h4 {
+  font-size: larger;
+}
+
+.listItem p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.listItem img {
+  max-width: 120px;
+  max-height: 120px;
   display: block;
   margin: 0 auto;
 }
 
-@-webkit-keyframes index-links {
-  to {
-    -webkit-transform: scale(1.05);
-            transform: scale(1.05);
+#listItem--img {
+  display: block;
+  max-height: 120px;
+  min-width: 130px;
+}
+
+@media (max-width: 1199.98px) {
+  #targetContainer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
   }
 }
 
-@keyframes index-links {
-  to {
-    -webkit-transform: scale(1.05);
-            transform: scale(1.05);
+@media (max-width: 1199.98px) and (min-width: 992px) {
+  .listItem {
+    height: 200px;
+    width: 700px;
+  }
+  .listItem img {
+    max-width: 140px;
+    max-height: 140px;
+  }
+  #listItem--img {
+    max-height: 140px;
+    min-width: 150px;
+  }
+}
+
+.itemBody {
+  display: block;
+  width: 740px;
+  padding: 20px;
+}
+
+.itemBody img {
+  display: block;
+  max-height: 300px;
+  max-width: 300px;
+  margin: 0 auto 20px;
+}
+
+.itemBody p {
+  padding-left: 20px;
+  text-indent: 6px;
+}
+
+/********
+  LOADER
+*********/
+.lds-facebook {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.lds-facebook div {
+  display: inline-block;
+  position: absolute;
+  left: 8px;
+  width: 16px;
+  background: lightgray;
+  -webkit-animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+          animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+}
+
+.lds-facebook div:nth-child(1) {
+  left: 8px;
+  -webkit-animation-delay: -0.24s;
+          animation-delay: -0.24s;
+}
+
+.lds-facebook div:nth-child(2) {
+  left: 32px;
+  -webkit-animation-delay: -0.12s;
+          animation-delay: -0.12s;
+}
+
+.lds-facebook div:nth-child(3) {
+  left: 56px;
+  -webkit-animation-delay: 0;
+          animation-delay: 0;
+}
+
+@-webkit-keyframes lds-facebook {
+  0% {
+    top: 8px;
+    height: 64px;
+  }
+  50%, 100% {
+    top: 24px;
+    height: 32px;
+  }
+}
+
+@keyframes lds-facebook {
+  0% {
+    top: 8px;
+    height: 64px;
+  }
+  50%, 100% {
+    top: 24px;
+    height: 32px;
   }
 }
 /*# sourceMappingURL=style.css.map */

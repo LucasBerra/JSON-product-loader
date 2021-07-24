@@ -19,9 +19,19 @@
 
   <main>
     <div id="title">
-      <h2 id="page-value" value="men's clothing">Electronics</h2><span id="loading" class="loading-style">Loading...</span>
+      <h2 id="page-value">Electronics</h2><span id="loading" class="loading-style">Loading...</span>
     </div>
-    <div id="targetContainer"></div>
+    <button id="list-btn" class="btn btn-secondary hidden" onclick="backToList()">Back to list</button>
+
+    <div id="content">
+      <div id="targetContainer">
+        <div class="lds-facebook">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+    </div>
   </main>
 
   <script src="/js/main.js"></script>
