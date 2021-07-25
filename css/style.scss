@@ -4,7 +4,8 @@
 }
 
 body {
-  background: linear-gradient(135deg,rgb(224, 224, 224), rgb(240, 240, 240) 80%) fixed;
+  background: linear-gradient(135deg,rgb(197, 197, 197), rgb(240, 240, 240)) fixed;
+  min-height: 100vh;
 }
 
 header {
@@ -12,14 +13,17 @@ header {
   border-bottom: 2px dotted burlywood;
 
   h1 {
+    display: inline;
     font-family: "Boarding";
     font-weight: 900;
-    font-size: 50px;
+    font-size: 40px;
+    margin: 0;
   }
 
-  p {
-    font-size: 18px;
-    margin: 0;
+  span {
+    margin-left: 10px;
+    font-size: larger;
+    font-style: italic;
   }
 
   a {
@@ -35,24 +39,83 @@ header {
   }
 }
 
+@media (max-width: 991.98px) {
+  header h1 {
+    font-size: 38px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  header h1 {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  header {
+    h1 {
+      display: block;
+    }
+    span {
+      margin: 0;
+    }
+  }
+}
+
 main {
   display: block;
   width: fit-content;
   margin: 0 auto;
 }
 
-#index-main {
+footer {
+  font-style: italic;
+  color:lightslategray;
+  margin-bottom: 20px;
+  a {
+    color: lightslategray;
+    &:hover {
+      color: lightslategray;
+    }
+  }
+}
+
+@media (max-width: 575.98px) {
+  footer {
+    text-align: center;
+  }
+}
+
+
+/***********
+LANDING PAGE
+***********/
+
+#index-div {
   background-color: rgb(252, 252, 252);
   border-radius: 5px;
   padding: 16px;
-  margin: 20px 20px;
+  margin: 20px auto;
   box-shadow: grey 0 0 2px;
-  background: bisque;
+  background: white;
   width: 900px;
-  max-width: 96vw;
+  max-width: 94vw;
+  text-align: center;
+
+  h1 {
+    font-family: "Boarding";
+    font-weight: 900;
+    font-size: 48px;
+    margin: 0;
+  }
 
   h3 {
-    margin-bottom: 20px; 
+    margin: 0 0 16px 20px;
+    text-align: left;
+  }
+
+  p {
+    font-size: medium;
   }
 
   a {
@@ -60,23 +123,93 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 24px;
-    width: 46%;
+    flex-direction: column;
+    font-size: 20px;
+    width: 22%;
     height: 120px;
     background: rgba($color: #ffffff, $alpha: 0.6);
     margin: 10px;
-    color: #212529;
+    color: #FFFFFF;
     box-shadow: grey 0 0 2px;
     &:hover {
-      color: #212529;
+      color: #FFFFFF;
       animation: "index-links" 100ms ease forwards;
+      i {
+        color: #FFFFFF;
+      }
     }
+
+    i {
+      font-size: 2em;
+      color: rgba($color: #FFFFFF, $alpha: 0.5);
+    }
+  }
+
+  #women-clothing {
+    background-color:rgb(230, 88, 116);
+  }
+  
+  #men-clothing {
+    background-color:rgb(110, 91, 219);
+  }
+  
+  #electronics {
+    background-color:rgb(82, 212, 152);
+  }
+  
+  #jewelery {
+    background-color:rgb(245, 188, 83);
   }
 }
 
 @keyframes index-links {
-  to { transform: scale(1.05); }
+  to {
+    transform: scale(1.05);
+  }
 }
+
+@keyframes index-links--color {
+  to {
+    color: #FFFFFF;
+  }
+}
+
+@media (max-width: 991.98px) {
+  #index-div {
+    width: 600px;
+    a {
+      width: 44%;
+      height: 110px;
+    }
+  }
+}
+
+@media (max-width: 767.98px) {
+  #index-div {
+    width: 500px;
+    h1 {
+      font-size: 38px;
+    }
+    a {
+      width: 44%;
+      height: 90px;
+    }
+  }
+}
+
+@media (max-width: 575.98px) {
+  #index-div {
+    width: 90%;
+    a {
+      width: 100%;
+    }
+  }
+}
+
+
+/*************
+CATEGORY PAGES
+*************/
 
 #title {
   background-color: rgb(252, 252, 252);
@@ -85,14 +218,35 @@ main {
   padding: 16px;
   margin: 20px auto;
   box-shadow: grey 0 0 2px;
+
   h2 {
     display: inline;
+    font-family: "Boarding";
+    font-weight: bolder;
+    font-size: 38px;
   }
   span {
     display: inline-block;
   }
   button {
     margin-right: 16px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  #title h2 {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  #title{
+    padding: 12px;
+    span {
+      display: block;
+      width: fit-content;
+      margin: 5px auto 0;
+    }
   }
 }
 
@@ -110,7 +264,13 @@ main {
   background-color: rgb(255, 248, 144);
   padding: 5px;
   font-size: 1.2rem;
-  margin: 0 20px;
+  margin: 0 0 0 20px;
+}
+
+@media (max-width: 575.98px) {
+  .loading-style {
+    font-size: 1rem;
+  }
 }
 
 #content {
@@ -199,6 +359,20 @@ main {
   }
 }
 
+@media (max-width: 575.98px) {
+  .listItem {
+    flex-direction: column-reverse;
+    height: auto;
+    width: 90vw;
+
+    img {
+      max-width: 120px;
+      max-height: 120px;
+      padding-bottom: 20px;
+    }
+  }
+}
+
 .itemBody {
   display: block;
   width: 740px;
@@ -206,8 +380,8 @@ main {
 
   img {
     display: block;
-    max-height: 300px;
-    max-width: 300px;
+    max-height: 260px;
+    max-width: 260px;
     margin: 0 auto 20px;
   }
 
@@ -217,6 +391,32 @@ main {
   }
 }
 
+@media (max-width: 991.98px) {
+  .itemBody {
+    width: 600px;
+    img {
+      max-height: 240px;
+      max-width: 240px;
+    }
+  }
+}
+
+@media (max-width: 767.98px) {
+  .itemBody {
+    width: 90vw;
+    img {
+      max-height: 180px;
+      max-width: 180px;
+    }
+    p {
+      padding-left: 10px;
+    }
+  }
+}
+
+@media (max-width: 575.98px) {
+
+}
 
 
 /********
@@ -259,3 +459,23 @@ main {
     height: 32px;
   }
 }
+
+
+/*
+BREAKPOINTS
+*/
+
+// X-Small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) {}
+
+// Small devices (landscape phones, less than 768px)
+@media (max-width: 767.98px) {}
+
+// Medium devices (tablets, less than 992px)
+@media (max-width: 991.98px) {}
+
+// Large devices (desktops, less than 1200px)
+@media (max-width: 1199.98px) {}
+
+// X-Large devices (large desktops, less than 1400px)
+@media (max-width: 1399.98px) {}
