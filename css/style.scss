@@ -4,12 +4,12 @@
 }
 
 body {
-  background: linear-gradient(135deg,rgb(197, 197, 197), rgb(240, 240, 240)) fixed;
+  background: linear-gradient(135deg,rgb(252, 234, 212), rgb(243, 234, 222)) fixed;
   min-height: 100vh;
 }
 
 header {
-  background-color: bisque;
+  background-color: rgb(255, 219, 175);
   border-bottom: 2px dotted burlywood;
 
   h1 {
@@ -27,7 +27,7 @@ header {
   }
 
   a {
-    padding: 24px;
+    padding: 16px;
     text-decoration: none;
     color: #212529;
     display: block;
@@ -70,12 +70,12 @@ main {
 
 footer {
   font-style: italic;
-  color:lightslategray;
+  color:#212529;
   margin-bottom: 20px;
   a {
-    color: lightslategray;
+    color: #212529;
     &:hover {
-      color: lightslategray;
+      color: #212529;
     }
   }
 }

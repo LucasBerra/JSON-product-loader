@@ -4,12 +4,12 @@
 }
 
 body {
-  background: linear-gradient(135deg, #c5c5c5, #f0f0f0) fixed;
+  background: linear-gradient(135deg, #fcead4, #f3eade) fixed;
   min-height: 100vh;
 }
 
 header {
-  background-color: bisque;
+  background-color: #ffdbaf;
   border-bottom: 2px dotted burlywood;
 }
 
@@ -28,7 +28,7 @@ header span {
 }
 
 header a {
-  padding: 24px;
+  padding: 16px;
   text-decoration: none;
   color: #212529;
   display: block;
@@ -71,16 +71,16 @@ main {
 
 footer {
   font-style: italic;
-  color: lightslategray;
+  color: #212529;
   margin-bottom: 20px;
 }
 
 footer a {
-  color: lightslategray;
+  color: #212529;
 }
 
 footer a:hover {
-  color: lightslategray;
+  color: #212529;
 }
 
 @media (max-width: 575.98px) {
